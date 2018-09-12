@@ -9,7 +9,7 @@ with open('activities.csv', 'r') as file:
     ride_climb = []
     row_count = 0
     for ride in rides:
-        if row_count < 20:
+        if row_count < 20:  # select number of recent rides to plot
             ride_date.append(ride[0])
             ride_distance.append(int(ride[1]) / 1000)  # convert from metres to km
             ride_climb.append(float(ride[2]))

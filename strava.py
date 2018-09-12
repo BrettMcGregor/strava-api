@@ -12,7 +12,7 @@ rides = list(activities)
 with open("activities.csv", "w", newline="") as file:
     csv_writer = csv.writer(file)
     for ride in rides:
-        date = str(ride.start_date)[:10]
+        date = str(ride.start_date_local)[:10]
         distance = str(ride.distance)[:-5]
         elevation = str(ride.total_elevation_gain).rstrip(" m")
         csv_writer.writerow([date, distance, elevation])
