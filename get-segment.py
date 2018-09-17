@@ -15,7 +15,11 @@ mt_coottha = 615163
 # print(segment.average_grade)
 # print(segment.effort_count)
 
-my_efforts = client.get_segment_efforts(mt_coottha, athlete_id=1057216)
+ 
+
+my_efforts = client.get_segment_efforts(mt_coottha, athlete_id=1057216, start_date_local='2018-06-01', end_date_local='2019-01-01')
+
+
 
 with open("mtcoottha_back.csv", "w", newline="") as file:
     csv_writer = csv.writer(file)
@@ -51,7 +55,7 @@ dist = plt.scatter(x, y, c="orange")
 
 ax.set_xlabel("Ride Date")
 ax.set_ylabel("Time (seconds)")
-ax.set_title("Mt Coot-tha Back Efforts")
+ax.set_title("Recent Mt Coot-tha Back Efforts")
 
 ax.set_xticks(index)
 ax.set_xticklabels([x for x in x],{'horizontalalignment': 'right'})
